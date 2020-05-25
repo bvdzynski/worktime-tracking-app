@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".EditTimeLogActivity"
+    tools:showIn="@layout/activity_edit_time_log">
+
+    <TextView
+        android:id="@+id/timeLogEditProjectPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:text="Project: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/timeLogEditProjectSpinner"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLogEditProjectPlaceholder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timeLogEditTitlePlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="24dp"
+        android:text="Title: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogEditProjectPlaceholder" />
+
+    <EditText
+        android:id="@+id/timeLogEditTitleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="18dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLogEditTitlePlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogEditProjectSpinner" />
+
+    <TextView
+        android:id="@+id/timeLogEditDescriptionPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="34dp"
+        android:text="Description: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogEditTitlePlaceholder" />
+
+    <EditText
+        android:id="@+id/timeLogEditDescriptionText"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="18dp"
+        android:clickable="false"
+        android:ems="10"
+        android:enabled="true"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/tertiary_text_light"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/timeLogEditDescriptionPlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogEditTitleText" />
+
+    <TextView
+        android:id="@+id/timeLogEditLocationPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="37dp"
+        android:text="Location: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogEditDescriptionPlaceholder" />
+
+    <Spinner
+        android:id="@+id/timeLogEditLocationSpinner"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/timeLogEditLocationPlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogEditDescriptionText" />
+
+    <ImageView
+        android:id="@+id/timeLogEditImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="128dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogEditLocationSpinner"
+        app:srcCompat="@drawable/ic_block_black_24dp" />
+
+    <Button
+        android:id="@+id/timeLogEditImagePickButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="@color/color_worktrack_purple"
+        android:text="Choose Image"
+        android:textColor="@color/ic_worktrack_icon_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogEditImageView" />
+
+    <Button
+        android:id="@+id/timeLogEditSaveButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/color_worktrack_green"
+        android:text="Save"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintEnd_toEndOf="@+id/timeLogEditImagePickButton"
+        app:layout_constraintStart_toStartOf="@+id/timeLogEditImagePickButton"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogEditImagePickButton" />
+
+</android.support.constraint.ConstraintLayout>

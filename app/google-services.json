@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "728738952775",
+    "firebase_url": "https://worktime-tracking-app.firebaseio.com",
+    "project_id": "worktime-tracking-app",
+    "storage_bucket": "worktime-tracking-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728738952775:android:2bbf183a71a818fdeca362",
+        "android_client_info": {
+          "package_name": "com.project.worktimetrackingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728738952775-rqelqlhfaodkuncv7dd1416unkj6bo1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQKjmfBmZTHD3qAkAYA7RX2BwoC487F7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728738952775-rqelqlhfaodkuncv7dd1416unkj6bo1e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ShowTimeLogActivity"
+    tools:showIn="@layout/activity_show_time_log">
+
+    <TextView
+        android:id="@+id/timeLogShowProjectPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:text="Project: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timeLogShowProjectText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLogShowProjectPlaceholder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timeLogShowTitlePlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="12dp"
+        android:text="Title: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowProjectPlaceholder" />
+
+    <TextView
+        android:id="@+id/timeLogShowTitleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLogShowTitlePlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowProjectText" />
+
+    <TextView
+        android:id="@+id/timeLogShowDescriptionPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="12dp"
+        android:text="Description: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowTitlePlaceholder" />
+
+    <TextView
+        android:id="@+id/timeLogShowDescriptionText"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/alpha_0"
+        android:clickable="false"
+        android:ems="10"
+        android:enabled="true"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/tertiary_text_light"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/timeLogShowWorkTimePlaceholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLogShowDescriptionPlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowTitleText" />
+
+    <TextView
+        android:id="@+id/timeLogShowWorkTimePlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="56dp"
+        android:text="Work time (h): "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowDescriptionPlaceholder" />
+
+    <TextView
+        android:id="@+id/timeLogShowWorkTimeText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLogShowWorkTimePlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowDescriptionText" />
+
+    <TextView
+        android:id="@+id/timeLogShowLocationPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="12dp"
+        android:text="Location: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowWorkTimePlaceholder" />
+
+    <TextView
+        android:id="@+id/timeLogShowLocationText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLogShowLocationPlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowWorkTimeText" />
+
+    <TextView
+        android:id="@+id/timeLogShowCreatedAtPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="12dp"
+        android:text="Log date: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowLocationPlaceholder" />
+
+    <TextView
+        android:id="@+id/timeLogShowCreatedAtText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLogShowCreatedAtPlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowLocationText" />
+
+    <TextView
+        android:id="@+id/timeLogShowImageUrlPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="12dp"
+        android:text="ImageUrl: "
+        android:textColor="@color/color_worktrack_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowCreatedAtPlaceholder" />
+
+    <TextView
+        android:id="@+id/timeLogShowImageText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLogShowImageUrlPlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/timeLogShowCreatedAtText" />
+
+</android.support.constraint.ConstraintLayout>

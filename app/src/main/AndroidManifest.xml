@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project.worktimetrackingapp">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.project.worktimetrackingapp.StartActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_start"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.project.worktimetrackingapp.EditTimeLogActivity"
+            android:label="Edit TimeLog"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.worktimetrackingapp.DeveloperShowTimeLogActivity"
+            android:label="Show TimeLog - Dev"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.worktimetrackingapp.TeamLeaderShowTimeLogActivity"
+            android:label="Show TimeLog - TeamLead"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.worktimetrackingapp.EditProjectActivity"
+            android:label="Edit Project"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.worktimetrackingapp.EditLocationActivity"
+            android:label="Edit Location"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.worktimetrackingapp.DeveloperListAllTimeLogsActivity"
+            android:label="WorkTrack - Developer"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.project.worktimetrackingapp.DeveloperListFilteredTimeLogsActivity"
+            android:label="WorkTrack - Developer"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.project.worktimetrackingapp.TeamLeaderViewActivity"
+            android:label="WorkTrack - TeamLeader"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.project.worktimetrackingapp.DeveloperChartViewActivity"
+            android:label="WorkTrack - Charts"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+    </application>
+
+</manifest>

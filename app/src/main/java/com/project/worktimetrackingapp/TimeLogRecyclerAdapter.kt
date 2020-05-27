@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +21,6 @@ class TimeLogRecyclerAdapter(private val context: Context, private val timeLogs:
     override fun getItemCount() = timeLogs.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.i(tag, itemCount.toString())
         val timeLog = timeLogs[position]
         holder.textTitle?.text = timeLog.title
         holder.textStatus?.text = timeLog.status

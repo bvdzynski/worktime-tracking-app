@@ -1,9 +1,7 @@
 package com.project.worktimetrackingapp
 
 import android.content.Context
-import android.graphics.BitmapFactory
 import android.net.Uri
-import android.provider.MediaStore
 import android.util.Base64
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject

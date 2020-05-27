@@ -36,7 +36,6 @@ class EditLocationActivity : AppCompatActivity() {
             var createdLocation :LocationInfo = createNewLocation()
             locationId = createdLocation.locationId
 
-            Log.i("created in app new locationId: ", createdLocation.locationId)
             val queue= Volley.newRequestQueue(this)
             val addLocationRequest: StringRequest = object : StringRequest(Method.POST, ADD_LOCATION_URL,
                     Response.Listener { response -> // response
@@ -44,6 +43,7 @@ class EditLocationActivity : AppCompatActivity() {
                         Log.i("response from api: ", response.toString())
                     },
                     Response.ErrorListener {
+                        Log.i("creating location failed", "error")
                         Log.i("response from api: ", it.toString())
                     }
             ) {
@@ -99,9 +99,7 @@ class EditLocationActivity : AppCompatActivity() {
 
         var chosenLocation = LocationInfo()
 
-        Log.i("looking for", locationId)
         locations.forEach{
-            Log.i("checking...", it.value.locationId)
             if(it.value.locationId == locationId){
                 chosenLocation = it.value
             }
@@ -123,9 +121,7 @@ class EditLocationActivity : AppCompatActivity() {
 
         var chosenLocation = LocationInfo()
 
-        Log.i("looking for", locationId)
         locations.forEach{
-            Log.i("checking...", it.value.locationId)
             if(it.value.locationId == locationId){
                 chosenLocation = it.value
             }
@@ -141,6 +137,7 @@ class EditLocationActivity : AppCompatActivity() {
                     Log.i("response from api: ", response.toString())
                 },
                 Response.ErrorListener {
+                    Log.i("editing location failed", "error")
                     Log.i("response from api: ", it.toString())
                 }
         ) {
@@ -166,6 +163,7 @@ class EditLocationActivity : AppCompatActivity() {
                     Log.i("response from api: ", response.toString())
                 },
                 Response.ErrorListener {
+                    Log.i("deleting location failed", "error")
                     Log.i("response from api: ", it.toString())
                 }
         ) {

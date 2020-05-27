@@ -4,12 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_team_leader_show_time_log.*
-import kotlinx.android.synthetic.main.content_developer_show_time_log.*
 import kotlinx.android.synthetic.main.content_team_leader_show_time_log.*
 import kotlinx.android.synthetic.main.content_team_leader_show_time_log.timeLogShowCreatedAtText
 import kotlinx.android.synthetic.main.content_team_leader_show_time_log.timeLogShowDescriptionText
@@ -68,7 +66,6 @@ class TeamLeaderShowTimeLogActivity : AppCompatActivity() {
         var chosenTimeLog = TimeLogInfo()
 
         timeLogs.forEach{
-            Log.i(tag, "timelogid: ${it.timeLogId}")
             if(it.timeLogId == timeLogId){
                 chosenTimeLog = it
             }
@@ -96,7 +93,6 @@ class TeamLeaderShowTimeLogActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        Log.d(tag, "onPause")
     }
 
 }

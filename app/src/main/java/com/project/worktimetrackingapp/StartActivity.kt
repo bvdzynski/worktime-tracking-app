@@ -61,7 +61,7 @@ class StartActivity : AppCompatActivity() {
 
         LocationHelper().startListeningUserLocation(this , object : LocationHelper.MyLocationListener {
             override fun onLocationChanged(location: Location) {
-                Log.d("current location: ", location.latitude.toString() + "," + location.longitude.toString())
+                Log.i("currentLocation: ", location.latitude.toString() + "," + location.longitude.toString())
                 currentCoordinates = location.latitude.toString() + "," + location.longitude.toString()
             }
         })

@@ -2,13 +2,11 @@ package com.project.worktimetrackingapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_developer_view.*
@@ -16,8 +14,6 @@ import kotlinx.android.synthetic.main.app_bar_dev_time_logs.*
 import kotlinx.android.synthetic.main.content_time_logs.*
 
 class DeveloperListAllTimeLogsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    private val tag = this::class.simpleName
-
     private val timeLogLayoutManager by lazy {
         LinearLayoutManager(this)
     }
@@ -36,7 +32,6 @@ class DeveloperListAllTimeLogsActivity : AppCompatActivity(), NavigationView.OnN
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_developer_view)
         setSupportActionBar(toolbar)
-        Log.d(tag, "onCreate")
 
         addTimeLogButton.setOnClickListener { view ->
             val intent = Intent(this, EditTimeLogActivity::class.java)
@@ -72,13 +67,10 @@ class DeveloperListAllTimeLogsActivity : AppCompatActivity(), NavigationView.OnN
 
     override fun onResume() {
         super.onResume()
-        Log.d(tag, "onResume")
         listItems.adapter?.notifyDataSetChanged()
-
     }
 
     override fun onBackPressed() {
-        Log.d(tag, "onBackPressed")
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {

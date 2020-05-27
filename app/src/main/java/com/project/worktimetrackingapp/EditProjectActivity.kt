@@ -36,7 +36,6 @@ class EditProjectActivity : AppCompatActivity() {
             var createdProject :ProjectInfo = createNewProject()
             projectId = createdProject.projectId
 
-            Log.i("created in app new projectId: ", createdProject.projectId)
             val queue= Volley.newRequestQueue(this)
             val addProjectRequest: StringRequest = object : StringRequest(Method.POST, ADD_PROJECT_URL,
                     Response.Listener { response -> // response
@@ -44,6 +43,7 @@ class EditProjectActivity : AppCompatActivity() {
                         Log.i("response from api: ", response.toString())
                     },
                     Response.ErrorListener {
+                        Log.i("creating project failed", "error")
                         Log.i("response from api: ", it.toString())
                     }
             ) {
@@ -100,9 +100,7 @@ class EditProjectActivity : AppCompatActivity() {
 
         var chosenProject = ProjectInfo()
 
-        Log.i("looking for", projectId)
         projects.forEach{
-            Log.i("checking...", it.value.projectId)
             if(it.value.projectId == projectId){
                 chosenProject = it.value
             }
@@ -124,9 +122,7 @@ class EditProjectActivity : AppCompatActivity() {
 
         var chosenProject = ProjectInfo()
 
-        Log.i("looking for", projectId)
         projects.forEach{
-            Log.i("checking...", it.value.projectId)
             if(it.value.projectId == projectId){
                 chosenProject = it.value
             }
@@ -142,6 +138,7 @@ class EditProjectActivity : AppCompatActivity() {
                     Log.i("response from api: ", response.toString())
                 },
                 Response.ErrorListener {
+                    Log.i("editing project failed", "error")
                     Log.i("response from api: ", it.toString())
                 }
         ) {
@@ -167,6 +164,7 @@ class EditProjectActivity : AppCompatActivity() {
                     Log.i("response from api: ", response.toString())
                 },
                 Response.ErrorListener {
+                    Log.i("deleting project failed", "error")
                     Log.i("response from api: ", it.toString())
                 }
         ) {

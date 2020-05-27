@@ -6,7 +6,6 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.location.Location
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -86,14 +85,14 @@ class EditTimeLogActivity : AppCompatActivity() {
             var createdTimeLog :TimeLogInfo = createNewTimeLog()
             timeLogId = createdTimeLog.timeLogId
 
-            Log.i("created in app new timeLogId: ", timeLogId)
             val queue= Volley.newRequestQueue(this)
             val addTimeLogRequest: StringRequest = object : StringRequest(Method.POST, ADD_TIME_LOG_URL,
                     Response.Listener { response -> // response
-                        Log.i("created in app new timeLogId: ", timeLogId)
+                        Log.i("ok, created in app new timeLogId: ", timeLogId)
                         Log.i("response from api: ", response.toString())
                     },
                     Response.ErrorListener {
+                        Log.i("creating timeLog failed", "error")
                         Log.i("response from api: ", it.toString())
                     }
             ) {
@@ -129,17 +128,13 @@ class EditTimeLogActivity : AppCompatActivity() {
 
             var chosenTimeLog = TimeLogInfo()
 
-            Log.i("looking for", timeLogId)
             timeLogs.forEach{
-                Log.i("checking...", it.timeLogId)
                 if(it.timeLogId == timeLogId){
                     chosenTimeLog = it
                 }
             }
 
             chosenTimeLog.imageURI = data?.data!!
-
-            Log.i("image uri:", data?.data.toString())
         }
     }
 
@@ -184,9 +179,7 @@ class EditTimeLogActivity : AppCompatActivity() {
 
         var chosenTimeLog = TimeLogInfo()
 
-        Log.i("looking for", timeLogId)
         timeLogs.forEach{
-            Log.i("checking...", it.timeLogId)
             if(it.timeLogId == timeLogId){
                 chosenTimeLog = it
             }
@@ -211,9 +204,7 @@ class EditTimeLogActivity : AppCompatActivity() {
     private fun saveTimeLog() {
 
         var chosenTimeLog = TimeLogInfo()
-        Log.i("looking for", timeLogId)
         timeLogs.forEach{
-            Log.i("checking...", it.timeLogId)
             if(it.timeLogId == timeLogId){
                 chosenTimeLog = it
             }
@@ -234,6 +225,7 @@ class EditTimeLogActivity : AppCompatActivity() {
                     Log.i("response from api: ", response.toString())
                 },
                 Response.ErrorListener {
+                    Log.i("editing timeLog failed", "error")
                     Log.i("response from api: ", it.toString())
                 }
         ) {
@@ -275,6 +267,7 @@ class EditTimeLogActivity : AppCompatActivity() {
                     Log.i("response from api: ", response.toString())
                 },
                 Response.ErrorListener {
+                    Log.i("deleting timeLog failed", "error")
                     Log.i("response from api: ", it.toString())
                 }
         ) {

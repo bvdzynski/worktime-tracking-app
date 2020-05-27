@@ -1,8 +1,8 @@
 package com.project.worktimetrackingapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
@@ -82,7 +82,6 @@ class DeveloperShowTimeLogActivity : AppCompatActivity() {
         var chosenTimeLog = TimeLogInfo()
 
         timeLogs.forEach{
-            Log.i(tag, "timelogid: ${it.timeLogId}")
             if(it.timeLogId == timeLogId){
                 chosenTimeLog = it
             }
@@ -106,12 +105,9 @@ class DeveloperShowTimeLogActivity : AppCompatActivity() {
     private fun closeTimeLog(timeLogs: List<TimeLogInfo>) {
 
         var chosenTimeLog = TimeLogInfo()
-        Log.i("looking for", timeLogId)
         timeLogs.forEach{
-            Log.i("checking...", it.timeLogId)
             if(it.timeLogId == timeLogId){
                 chosenTimeLog = it
-                Log.i("worktime", "got it")
             }
         }
 
@@ -122,10 +118,11 @@ class DeveloperShowTimeLogActivity : AppCompatActivity() {
         val queue= Volley.newRequestQueue(this)
         val closeTimeLogRequest: StringRequest = object : StringRequest(Method.POST, CLOSE_TIME_LOG_URL,
                 Response.Listener { response -> // response
-                    Log.i("closed timelog: ", chosenTimeLog.timeLogId)
+                    Log.i("closed timeLog: ", chosenTimeLog.timeLogId)
                     Log.i("response from api: ", response.toString())
                 },
                 Response.ErrorListener {
+                    Log.i("closing timeLog failed", "error")
                     Log.i("response from api: ", it.toString())
                 }
         ) {
@@ -142,6 +139,7 @@ class DeveloperShowTimeLogActivity : AppCompatActivity() {
         queue.add(closeTimeLogRequest)
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun calculateWorkTime(start: String? = null, stop: String? = null): String{
         val dateFormat: String = "yyyy/MM/dd HH:mm:ss"
         val startDate = SimpleDateFormat(dateFormat).parse(start)
@@ -160,7 +158,6 @@ class DeveloperShowTimeLogActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        Log.d(tag, "onPause")
     }
 
 }

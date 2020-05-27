@@ -1,7 +1,9 @@
 # WorkTrack - TNA Android App
 
 ### Description:
->Simple TNA/Time-tracking application (registration time) - the user adds/edits/deletes entries representing the time of his work to the base. On their basis, working time is calculated and charts are created. The data is information for supervisors about progress, and can also be a "diary" for an employee (what was done/what is missing)).
+>Simple TNA/Time-tracking application (registration time) - the user adds/edits/deletes entries representing the time of his work to the base. On their basis, working time is calculated and charts are created. The data is information for supervisors about progress, and can also be a "diary" for an employee (what was done/what is missing).
+
+![screenshots](https://raw.githubusercontent.com/bvdzynski/worktime-tracking-app/master/screenshots.png)
 
 ### Features (division of features into a team leader and a developer)
 DEVELOPER:
